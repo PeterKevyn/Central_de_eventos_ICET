@@ -1,0 +1,196 @@
+<div id="icet-wireframes" lang="pt-BR">
+  <style>
+    #icet-wireframes{--ufam-green:#00a551;--ufam-blue:#0d3049;--ufam-lime:#c2d94b;--ink:#183341;--muted:#5a6d73;--line:#dce5e1;--paper:#fff;--canvas:#f4f7f5;--soft:#eaf5ef;--radius:16px;font-family:Arial,Helvetica,sans-serif;color:var(--ink);font-size:14px;line-height:1.5;color-scheme:light}
+    #icet-wireframes *{box-sizing:border-box}
+    #icet-wireframes [hidden]{display:none!important}
+    #icet-wireframes h1,#icet-wireframes h2,#icet-wireframes h3,#icet-wireframes p{margin:0}
+    #icet-wireframes button,#icet-wireframes input,#icet-wireframes select,#icet-wireframes textarea{font:inherit}
+    #icet-wireframes button{cursor:pointer}
+    #icet-wireframes button:focus-visible,#icet-wireframes input:focus-visible,#icet-wireframes select:focus-visible,#icet-wireframes textarea:focus-visible{outline:3px solid #176073;outline-offset:3px}
+    #icet-wireframes .wf-heading{color:#183341;color:light-dark(#183341,#e5efea);color-scheme:light dark;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:0 100px 16px 0}
+    #icet-wireframes .wf-heading h2{font-size:20px;letter-spacing:-.6px;font-weight:700}
+    #icet-wireframes .wf-heading p{font-size:12px;color:#60776c;color:light-dark(#60776c,#b2c5bb)}
+    #icet-wireframes .swatches{display:flex;gap:6px;align-items:center}
+    #icet-wireframes .swatch{display:block;width:18px;height:18px;border-radius:50%;background:var(--swatch)}
+    #icet-wireframes .screen-picker{display:flex;gap:6px;flex-wrap:wrap;padding-bottom:16px}
+    #icet-wireframes .screen-picker button{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-size:12px;color:var(--muted);min-height:36px}
+    #icet-wireframes .screen-picker button[aria-pressed=true]{background:var(--ufam-blue);color:white;border-color:var(--ufam-blue)}
+    #icet-wireframes .stage{min-height:835px;padding:24px 16px 28px;display:flex;justify-content:center;align-items:flex-start;background:#eaf0ec;border-radius:20px}
+    #icet-wireframes .product{background:var(--canvas);border:1px solid #d0dcd5;overflow:hidden;display:flex;flex-direction:column;width:100%;min-width:0}
+    #icet-wireframes .mobile{max-width:382px;border-radius:26px;min-height:778px;box-shadow:0 12px 30px #0d30490b}
+    #icet-wireframes .desktop{border-radius:14px;min-height:778px}
+    #icet-wireframes .browser-line{order:-3;height:28px;background:#e4ebe6;border-bottom:1px solid #d0dcd5;display:flex;align-items:center;padding:0 14px;gap:5px}
+    #icet-wireframes .browser-line span{width:6px;height:6px;border-radius:50%;background:#9aaea1}
+    #icet-wireframes .browser-line small{font-size:10px;margin:auto;color:#486154;letter-spacing:.3px}
+    #icet-wireframes .app-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:22px 22px 18px;background:var(--paper);border-bottom:1px solid var(--line)}
+    #icet-wireframes .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    #icet-wireframes .brand-mark{width:33px;height:36px;display:grid;grid-template-columns:repeat(2,1fr);gap:3px;transform:skewY(-8deg);flex-shrink:0}
+    #icet-wireframes .brand-mark b{background:var(--ufam-green);border-radius:3px}
+    #icet-wireframes .brand-mark b:nth-child(2){background:var(--ufam-lime)}
+    #icet-wireframes .brand-mark b:nth-child(3){background:var(--ufam-blue)}
+    #icet-wireframes .brand-name{font-size:14px;font-weight:700;letter-spacing:-.3px;line-height:1.2}
+    #icet-wireframes .brand-name small{font-size:10px;font-weight:400;display:block;color:var(--muted);letter-spacing:.8px;margin-top:5px}
+    #icet-wireframes .account{border:1px solid var(--line);background:var(--paper);color:var(--ufam-blue);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;flex-shrink:0;padding:0}
+    #icet-wireframes .app-nav{display:flex;justify-content:space-around;gap:4px;margin-top:auto;padding:11px 8px 13px;border-top:1px solid var(--line);background:var(--paper)}
+    #icet-wireframes .app-nav button{border:0;background:none;color:var(--muted);font-size:11px;padding:4px;display:flex;flex-direction:column;gap:4px;align-items:center;min-width:68px;min-height:44px}
+    #icet-wireframes .app-nav button[aria-current=page]{color:#00783b;font-weight:700}
+    #icet-wireframes svg{width:18px;height:18px;flex-shrink:0}
+    #icet-wireframes .desktop .app-nav{order:-1;margin:0;justify-content:flex-start;padding:0 24px;border-top:0;border-bottom:1px solid var(--line)}
+    #icet-wireframes .desktop .app-header{order:-2;padding:18px 26px}
+    #icet-wireframes .desktop .app-nav button{flex-direction:row;gap:8px;padding:12px 16px;font-size:12px;min-height:46px;border-bottom:2px solid transparent}
+    #icet-wireframes .desktop .app-nav button[aria-current=page]{border-bottom-color:var(--ufam-green)}
+    #icet-wireframes .app-content{padding:24px 22px 26px;flex:1;min-width:0}
+    #icet-wireframes .desktop .app-content{padding:30px 32px}
+    #icet-wireframes .eyebrow{text-transform:uppercase;letter-spacing:1.2px;font-size:10px;font-weight:700;color:var(--muted);display:block;margin-bottom:7px}
+    #icet-wireframes h1{font-size:29px;line-height:1.12;letter-spacing:-1px;font-weight:700}
+    #icet-wireframes h2{font-size:18px;line-height:1.25;letter-spacing:-.4px;font-weight:700}
+    #icet-wireframes h3{font-size:15px;line-height:1.35;letter-spacing:-.2px;font-weight:700}
+    #icet-wireframes .sub{font-size:12px;color:var(--muted);margin-top:9px}
+    #icet-wireframes .intro{margin-bottom:21px}
+    #icet-wireframes .intro h1 em{font-style:normal;color:#00783b}
+    #icet-wireframes .row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    #icet-wireframes .section-head{margin:23px 0 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+    #icet-wireframes .section-head h2{font-size:16px}
+    #icet-wireframes .text-link{border:0;background:none;padding:0;color:#006a35;text-decoration:underline;text-underline-offset:3px;font-size:12px}
+    #icet-wireframes .search{position:relative;display:flex;gap:8px;align-items:center}
+    #icet-wireframes .search label{flex:1;min-width:0;position:relative}
+    #icet-wireframes .search label svg{position:absolute;left:13px;top:13px;color:var(--muted)}
+    #icet-wireframes input,#icet-wireframes select,#icet-wireframes textarea{border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--paper);color:var(--ink);width:100%;min-width:0;min-height:44px}
+    #icet-wireframes .search input{padding-left:39px;font-size:13px}
+    #icet-wireframes .sr{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+    #icet-wireframes .filters{display:flex;gap:6px;flex-wrap:wrap;margin:11px 0 20px}
+    #icet-wireframes .chip{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:7px 12px;font-size:11px;color:var(--muted);min-height:34px}
+    #icet-wireframes .chip[aria-pressed=true]{color:var(--ufam-blue);background:var(--ufam-lime);border-color:var(--ufam-lime);font-weight:700}
+    #icet-wireframes .event-grid{display:grid;gap:12px}
+    #icet-wireframes .desktop .event-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    #icet-wireframes .event-card{padding:15px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);display:flex;gap:14px;align-items:flex-start;color:var(--ink);width:100%;text-align:left}
+    #icet-wireframes .date-block{width:48px;min-width:48px;background:var(--soft);border-radius:10px;text-align:center;padding:8px 4px;color:#006a35;line-height:1.2}
+    #icet-wireframes .date-block b{font-size:23px;display:block;letter-spacing:-.7px}
+    #icet-wireframes .date-block small{font-size:10px;letter-spacing:1px}
+    #icet-wireframes .event-copy{flex:1;min-width:0}
+    #icet-wireframes .badge{display:inline-flex;align-items:center;gap:5px;padding:3px 7px;font-size:10px;border-radius:5px;color:#006734;background:var(--soft);font-weight:700;margin-bottom:7px}
+    #icet-wireframes .badge.neutral{background:#edf1f3;color:#3f5868}
+    #icet-wireframes .meta{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:11px;margin-top:8px;flex-wrap:wrap}
+    #icet-wireframes .meta svg{width:13px;height:13px}
+    #icet-wireframes .card-foot{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:13px;font-size:11px;color:var(--muted)}
+    #icet-wireframes .arrow{font-size:18px;color:#00783b;line-height:1}
+    #icet-wireframes .feature{padding:19px 20px;background:var(--ufam-blue);border-radius:var(--radius);color:white;margin-top:18px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+    #icet-wireframes .feature p{font-size:11px;color:#d0e1df;margin-top:5px}
+    #icet-wireframes .feature h3{font-size:15px}
+    #icet-wireframes .feature button{width:36px;height:36px;border:0;border-radius:50%;background:var(--ufam-lime);color:var(--ufam-blue);flex-shrink:0}
+    #icet-wireframes .back{display:inline-flex;align-items:center;gap:5px;border:0;background:none;color:var(--muted);padding:0;margin-bottom:20px;font-size:12px}
+    #icet-wireframes .btn-main,#icet-wireframes .btn-secondary{border:0;border-radius:10px;min-height:44px;padding:12px 16px;font-size:13px;font-weight:700;display:inline-flex;gap:8px;align-items:center;justify-content:center;text-align:center}
+    #icet-wireframes .btn-main{background:var(--ufam-green);color:#082a1b}
+    #icet-wireframes .btn-secondary{background:var(--paper);border:1px solid var(--line);color:var(--ufam-blue)}
+    #icet-wireframes .btn-main:disabled{background:#e4e9e6;color:#64736b;cursor:default}
+    #icet-wireframes .full{width:100%}
+    #icet-wireframes .activity-list{display:grid;gap:12px;margin-top:16px}
+    #icet-wireframes .activity{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);padding:16px}
+    #icet-wireframes .activity h3{margin:3px 0 8px}
+    #icet-wireframes .activity .btn-secondary,#icet-wireframes .activity .btn-main{width:100%;margin-top:14px}
+    #icet-wireframes .desktop .activity-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+    #icet-wireframes .detail-band{height:87px;background:var(--soft);border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;padding:20px;margin-bottom:22px;color:#006a35}
+    #icet-wireframes .detail-band b{font-size:35px;letter-spacing:-2px;color:var(--ufam-blue)}
+    #icet-wireframes .detail-band span{font-size:11px}
+    #icet-wireframes .facts{display:grid;grid-template-columns:1fr 1fr;gap:15px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin:20px 0}
+    #icet-wireframes .facts dt{font-size:10px;color:var(--muted);margin-bottom:3px}
+    #icet-wireframes .facts dd{margin:0;font-size:12px;font-weight:700}
+    #icet-wireframes .body-copy{font-size:12px;color:var(--muted);line-height:1.7;margin:9px 0 20px}
+    #icet-wireframes .form-stack{display:grid;gap:15px;margin-top:24px}
+    #icet-wireframes .field{display:grid;gap:6px;font-size:12px;font-weight:700}
+    #icet-wireframes .field input,#icet-wireframes .field select,#icet-wireframes .field textarea{font-weight:400;font-size:14px}
+    #icet-wireframes .auth{max-width:390px;margin:15px auto}
+    #icet-wireframes .auth-symbol{display:flex;width:fit-content;padding:13px;background:var(--soft);border-radius:14px;margin-bottom:24px;color:#006a35}
+    #icet-wireframes .auth-symbol svg{width:24px;height:24px}
+    #icet-wireframes .auth-footer{margin-top:24px;text-align:center;color:var(--muted);font-size:12px}
+    #icet-wireframes .notice{font-size:12px;background:var(--soft);color:#155533;padding:12px 14px;border-radius:10px;margin:16px 0;line-height:1.6}
+    #icet-wireframes .notice.warning{background:#fff3dc;color:#70510c}
+    #icet-wireframes .notice.error{background:#fbeae8;color:#8e302c}
+    #icet-wireframes .empty{font-size:12px;color:var(--muted);padding:24px 0}
+    #icet-wireframes .cancel-btn{color:#913d30;background:none;border:0;padding:10px 0 0;font-size:11px;text-decoration:underline}
+    #icet-wireframes .form-cols{display:grid;gap:14px}
+    #icet-wireframes .desktop .form-cols{grid-template-columns:1fr 1fr}
+    #icet-wireframes .organizer-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+    #icet-wireframes .organizer-stats div{border-bottom:2px solid var(--ufam-green);padding:0 0 12px}
+    #icet-wireframes .organizer-stats b{display:block;font-size:28px;letter-spacing:-1px}
+    #icet-wireframes .organizer-stats span{font-size:11px;color:var(--muted)}
+    #icet-wireframes .person{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}
+    #icet-wireframes .demo-footer{font-size:10px;text-align:center;color:var(--muted);padding:0 12px 12px;letter-spacing:.3px}
+    #icet-wireframes .desktop .demo-footer{text-align:left;padding:0 32px 18px}
+    #icet-wireframes .feedback{min-height:0}
+    @media(max-width:600px){#icet-wireframes .stage{padding:16px 8px;min-height:880px}#icet-wireframes .wf-heading{padding-right:90px}#icet-wireframes .swatches{display:none}#icet-wireframes .desktop .app-content{padding:22px 18px}#icet-wireframes .desktop .event-grid,#icet-wireframes .desktop .activity-list,#icet-wireframes .desktop .form-cols{grid-template-columns:1fr}#icet-wireframes .desktop .app-nav{padding:0 8px;flex-wrap:wrap}#icet-wireframes .desktop .app-nav button{padding:10px 8px;font-size:11px}#icet-wireframes .desktop .app-header{padding:18px}#icet-wireframes h1{font-size:27px}#icet-wireframes .app-content{padding:22px 18px}#icet-wireframes .screen-picker button{min-height:40px}}
+    @media(pointer:coarse){#icet-wireframes .chip,#icet-wireframes .screen-picker button{min-height:44px}#icet-wireframes input,#icet-wireframes select{font-size:16px!important}}
+  </style>
+  <div class="wf-heading">
+    <div><h2>Central de Eventos ICET</h2><p>Wireframes · v0.1</p></div>
+    <div class="swatches" aria-label="Paleta UFAM"><span class="swatch" style="--swatch:#00a551" title="Verde #00A551"></span><span class="swatch" style="--swatch:#0d3049" title="Azul #0D3049"></span><span class="swatch" style="--swatch:#c2d94b" title="Lima #C2D94B"></span></div>
+  </div>
+  <nav class="screen-picker" aria-label="Telas do wireframe">
+    <button type="button" data-screen="home" aria-pressed="true">Início</button>
+    <button type="button" data-screen="program" aria-pressed="false">Programação</button>
+    <button type="button" data-screen="activity" aria-pressed="false">Atividade</button>
+    <button type="button" data-screen="login" aria-pressed="false">Entrar</button>
+    <button type="button" data-screen="register" aria-pressed="false">Cadastro</button>
+    <button type="button" data-screen="mine" aria-pressed="false">Inscrições</button>
+    <button type="button" data-screen="organizer" aria-pressed="false">Organizador</button>
+    <button type="button" data-screen="editor" aria-pressed="false">Criar evento</button>
+  </nav>
+  <div class="viz-carousel" aria-label="Wireframes responsivos do ICET" data-previous-label="Anterior" data-next-label="Próximo">
+    <section data-variant="Celular" aria-label="Versão para celular">
+      <div class="stage viz-dotted-background"><div class="product mobile" data-product="mobile" aria-label="Interface do ICET para celular"></div></div>
+    </section>
+    <section data-variant="Computador" aria-label="Versão para computador" hidden>
+      <div class="stage"><div class="product desktop" data-product="desktop" aria-label="Interface do ICET para computador"></div></div>
+    </section>
+  </div>
+  <script>
+  (() => {
+    const root = document.getElementById('icet-wireframes');
+    const screens = ['home','program','activity','login','register','mine','organizer','editor'];
+    const events = [
+      {id:1,day:'25',month:'NOV',title:'Semana de Ciência e Tecnologia',kind:'Semana acadêmica',period:'25 a 27 nov · 2026',place:'Campus ICET · Itacoatiara',activities:3},
+      {id:2,day:'02',month:'DEZ',title:'Encontro de Pesquisa e Extensão',kind:'Encontro',period:'02 dez · 2026',place:'Campus ICET · Itacoatiara',activities:2}
+    ];
+    const activities = [
+      {id:1,event:1,day:'25 nov',time:'09h–11h',start:9,end:11,title:'Introdução à programação web',type:'Minicurso',place:'Laboratório 02',person:'Profa. Ana Lima',capacity:30,remaining:12},
+      {id:2,event:1,day:'25 nov',time:'10h–11h30',start:10,end:11.5,title:'Inteligência artificial na pesquisa',type:'Palestra',place:'Auditório do ICET',person:'Prof. Paulo Souza',capacity:60,remaining:24},
+      {id:3,event:1,day:'26 nov',time:'14h–16h',start:14,end:16,title:'Prototipação de interfaces',type:'Oficina',place:'Laboratório 01',person:'Profa. Carla Alves',capacity:20,remaining:0},
+      {id:4,event:2,day:'02 dez',time:'09h–10h30',start:9,end:10.5,title:'Pesquisa que transforma a comunidade',type:'Palestra',place:'Auditório do ICET',person:'Profa. Ana Lima',capacity:60,remaining:18},
+      {id:5,event:2,day:'02 dez',time:'14h–16h',start:14,end:16,title:'Projetos de extensão em diálogo',type:'Oficina',place:'Sala 04',person:'Prof. Paulo Souza',capacity:30,remaining:8}
+    ];
+    let state={screen:'home',event:1,activity:1,day:'25 nov',query:'',filter:'Todos',signed:false,registrations:[],requests:[],notice:'',cancelTarget:null};
+    const saved=window.openai?.widgetState;
+    if(saved?.privateContent?.icet){const s=saved.privateContent.icet;if(screens.includes(s.screen))state={...state,...s,notice:'',cancelTarget:null};}
+    const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const icon = name => `<i data-lucide="${name}" aria-hidden="true"></i>`;
+    const button=(text,action,css='btn-main',extra='')=>`<button type="button" class="${css}" data-action="${action}" ${extra}>${text}</button>`;
+    function persist(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{tela:state.screen,evento:events.find(e=>e.id===state.event)?.title,inscricoesSimuladas:state.registrations.length},privateContent:{icet:{...state,notice:'',cancelTarget:null}}}).catch(()=>{});}
+    function go(screen){state.screen=screen;state.notice='';state.cancelTarget=null;render();persist();}
+    function currentActivity(){return activities.find(a=>a.id===state.activity)||activities[0];}
+    function currentEvent(){return events.find(e=>e.id===state.event)||events[0];}
+    function conflict(a){return state.registrations.some(id=>{const b=activities.find(x=>x.id===id);return b&&a.day===b.day&&a.start<b.end&&b.start<a.end;});}
+    function eventCard(e){return `<button type="button" class="event-card" data-event="${e.id}"><span class="date-block"><b>${e.day}</b><small>${e.month}</small></span><span class="event-copy"><span class="badge">${e.kind}</span><h3>${e.title}</h3><span class="meta">${icon('calendar-days')}${e.period}</span><span class="meta">${icon('map-pin')}${e.place}</span><span class="card-foot"><span>${e.activities} atividades · Gratuito</span><span class="arrow" aria-hidden="true">↗</span></span></span></button>`;}
+    function home(){const q=state.query.toLocaleLowerCase('pt-BR');const list=events.filter(e=>(e.title+' '+e.kind).toLocaleLowerCase('pt-BR').includes(q)&&(state.filter==='Todos'||(state.filter==='Encontros'?e.kind==='Encontro':e.kind==='Semana acadêmica')));return `<div class="intro"><span class="eyebrow">UFAM / ICET · ITACOATIARA</span><h1>Seu próximo<br><em>encontro com o saber.</em></h1><p class="sub">Explore eventos. Escolha atividades. Participe.</p></div><div class="search"><label><span class="sr">Buscar evento</span>${icon('search')}<input type="search" data-search placeholder="Buscar um evento" value="${esc(state.query)}"></label></div><div class="filters" aria-label="Tipo de evento">${['Todos','Semanas','Encontros'].map(f=>`<button type="button" class="chip" data-filter="${f}" aria-pressed="${state.filter===f}">${f}</button>`).join('')}</div><div class="section-head"><h2>Próximos eventos</h2><span class="meta" style="margin:0">${list.length} ${list.length===1?'evento':'eventos'}</span></div><div class="event-grid" data-results>${list.length?list.map(eventCard).join(''):'<p class="empty">Nenhum evento encontrado. Experimente outra busca.</p>'}</div><div class="feature"><div><h3>Sua programação, organizada.</h3><p>Acompanhe as atividades em que se inscreveu.</p></div>${button('→','mine','','aria-label="Ver minhas inscrições"')}</div>`;}
+    function activityCard(a){const registered=state.registrations.includes(a.id);return `<article class="activity"><div class="row"><span class="badge">${a.type}</span><span class="meta" style="margin:0">${a.time}</span></div><h3>${a.title}</h3><p class="meta">${icon('map-pin')}${a.place}</p><p class="meta">${icon('user-round')}${a.person}</p><div class="card-foot"><span>${registered?'Inscrição confirmada':a.remaining?`${a.remaining} vagas disponíveis`:'Vagas esgotadas'}</span></div>${button('Ver atividade','detail','btn-secondary',`data-activity="${a.id}"`)}</article>`;}
+    function program(){const e=currentEvent();const all=activities.filter(a=>a.event===e.id);const days=[...new Set(all.map(a=>a.day))];if(!days.includes(state.day))state.day=days[0];return `${button('← Eventos','home','back')}<div class="intro"><span class="eyebrow">${e.kind}</span><h1>${e.title}</h1><p class="sub">${e.period} · Presencial e gratuito</p></div><div class="filters" aria-label="Dia da programação">${days.map(d=>`<button type="button" class="chip" data-day="${d}" aria-pressed="${state.day===d}">${d}</button>`).join('')}</div><div class="section-head"><h2>Programação</h2><span class="meta" style="margin:0">Horário de Manaus</span></div><div class="activity-list">${all.filter(a=>a.day===state.day).map(activityCard).join('')}</div>`;}
+    function detail(){const a=currentActivity();const reg=state.registrations.includes(a.id);const clash=conflict(a)&&!reg;const title=reg?'Inscrição confirmada':!a.remaining?'Vagas esgotadas':clash?'Conflito de horário':state.signed?'Confirmar inscrição':'Entrar para se inscrever';return `${button('← Programação','program','back')}<div class="detail-band"><div><b>${a.day.split(' ')[0]}</b><span> ${a.day.split(' ')[1].toUpperCase()} / 2026</span></div><span>${a.type}<br>Presencial · Gratuito</span></div><span class="eyebrow">${currentEvent().title}</span><h1>${a.title}</h1><dl class="facts"><div><dt>Data e horário</dt><dd>${a.day} · ${a.time}</dd></div><div><dt>Local</dt><dd>${a.place}</dd></div><div><dt>Responsável</dt><dd>${a.person}</dd></div><div><dt>Vagas disponíveis</dt><dd>${a.remaining-(reg?1:0)} de ${a.capacity}</dd></div></dl><h2>Sobre a atividade</h2><p class="body-copy">${a.id===1?'Primeiros passos na criação de páginas com HTML, CSS e JavaScript. Uma atividade prática para quem quer começar a desenvolver para a web.':'Encontro para trocar conhecimentos, explorar aplicações e conectar estudantes e pesquisadores do ICET.'}</p><p class="meta">Inscrições até ${a.day} · 08h (Manaus)</p>${clash?'<div class="notice warning">Você já tem uma atividade neste horário. Consulte suas inscrições.</div>':''}${reg?'<div class="notice">Sua vaga está reservada nesta demonstração.</div>':''}<div style="margin-top:18px">${button(title,'enroll','btn-main full',reg||!a.remaining||clash?'disabled':'')}</div>${reg||clash?button('Ver minhas inscrições','mine','text-link','style="margin-top:14px"'):''}`;}
+    function login(){return `<div class="auth">${button('← Explorar eventos','home','back')}<div class="auth-symbol">${icon('log-in')}</div><span class="eyebrow">SUA CONTA ICET</span><h1>Bom ter você aqui.</h1><p class="sub">Entre para se inscrever nas atividades.</p><form class="form-stack" data-form="login"><label class="field">E-mail<input type="email" required autocomplete="email" placeholder="voce@exemplo.com"></label><label class="field">Senha<input type="password" required autocomplete="current-password" placeholder="Sua senha" minlength="6"></label><button class="btn-main full" type="submit">Entrar na demonstração ${icon('arrow-right')}</button></form><p class="auth-footer">Primeira vez por aqui? ${button('Criar conta','register','text-link')}</p><div class="notice">Use dados fictícios. Este wireframe simula o acesso e não envia informações.</div></div>`;}
+    function register(){return `<div class="auth">${button('← Entrar','login','back')}<span class="eyebrow">CONTA DE ALUNO</span><h1>Faça parte<br>dos próximos encontros.</h1><p class="sub">Um cadastro simples para participar.</p><form class="form-stack" data-form="register"><label class="field">Nome completo<input type="text" required autocomplete="name" placeholder="Como você se chama?"></label><label class="field">E-mail<input type="email" required autocomplete="email" placeholder="voce@exemplo.com"></label><label class="field">Senha<input type="password" required minlength="6" autocomplete="new-password" placeholder="Pelo menos 6 caracteres"></label><label class="field">Confirmar senha<input type="password" required minlength="6" autocomplete="new-password" placeholder="Repita sua senha"></label><button type="submit" class="btn-main full">Criar conta de demonstração</button></form><p class="auth-footer">Já tem uma conta? ${button('Entrar','login','text-link')}</p></div>`;}
+    function mine(){const ids=state.registrations;return `<div class="intro"><span class="eyebrow">ÁREA DO PARTICIPANTE</span><h1>Meus próximos<br>encontros.</h1><p class="sub">Suas inscrições, em um só lugar.</p></div>${ids.length?`<div class="activity-list">${ids.map(id=>{const a=activities.find(x=>x.id===id);const pending=state.requests.includes(id);return `<article class="activity"><span class="badge ${pending?'neutral':''}">${pending?'Cancelamento solicitado':'Confirmada'}</span><h3>${a.title}</h3><p class="meta">${icon('calendar-days')}${a.day} · ${a.time}</p><p class="meta">${icon('map-pin')}${a.place}</p>${button('Ver atividade','detail','btn-secondary',`data-activity="${a.id}"`)}${pending?'<p class="meta">A solicitação aguarda análise. Sua vaga permanece reservada.</p>':button('Solicitar cancelamento','cancel','cancel-btn',`data-registration="${id}"`)}</article>`;}).join('')}</div>`:`<div class="notice">Você ainda não tem inscrições nesta demonstração.</div>${button('Explorar eventos','home','btn-main full')}`}${state.cancelTarget?`<div class="notice warning">Solicitar cancelamento de “${activities.find(a=>a.id===state.cancelTarget).title}”?<div class="row" style="margin-top:12px">${button('Voltar','cancel-back','btn-secondary')}${button('Enviar solicitação','cancel-confirm','btn-main')}</div></div>`:''}`;}
+    function organizer(){return `<div class="intro"><span class="eyebrow">VISÃO DO ORGANIZADOR · DEMO</span><h1>Encontros que<br>você faz acontecer.</h1><p class="sub">Gerencie seus eventos e atividades.</p></div>${button(`${icon('plus')} Criar evento`,'editor','btn-main')}<div class="organizer-stats"><div><b>02</b><span>Eventos sob sua gestão</span></div><div><b>48</b><span>Participantes distintos*</span></div></div><div class="section-head"><h2>Seus eventos</h2></div><article class="activity"><div class="row"><span class="badge">Publicado</span><span class="meta" style="margin:0">25–27 nov</span></div><h3>Semana de Ciência e Tecnologia</h3><p class="meta">3 atividades · 36 participantes distintos*</p>${button('Ver atividades e inscritos','roster','btn-secondary')}</article><article class="activity" style="margin-top:12px"><span class="badge neutral">Rascunho</span><h3>Mostra de projetos do ICET</h3><p class="meta">Ainda não aparece na consulta pública</p>${button('Continuar edição','edit-draft','btn-secondary')}</article><p class="meta">* Números ilustrativos, sem soma duplicada por atividade.</p>`;}
+    function editor(){return `${button('← Meus eventos','organizer','back')}<span class="eyebrow">ORGANIZADOR · DEMO</span><h1>${state.editDraft?'Editar rascunho':'Criar um evento'}</h1><p class="sub">Comece pelo essencial. Adicione as atividades depois.</p><form class="form-stack" data-form="editor"><label class="field">Nome do evento<input name="title" required placeholder="Ex.: Mostra de projetos do ICET" value="${state.editDraft?'Mostra de projetos do ICET':''}"></label><div class="form-cols"><label class="field">Data inicial<input type="date" name="start" required value="2026-12-08"></label><label class="field">Data final<input type="date" name="end" required value="2026-12-09"></label></div><label class="field">Descrição<textarea name="description" required rows="3" placeholder="Apresente a proposta do evento">${state.editDraft?'Apresentação de projetos desenvolvidos pelos alunos do ICET.':''}</textarea></label><p class="meta">Presencial e gratuito · Campus ICET</p><button type="submit" class="btn-main full">Salvar rascunho de demonstração</button></form>`;}
+    function roster(){const e=currentEvent();return `${button('← Meus eventos','organizer','back')}<span class="eyebrow">ACOMPANHAMENTO · DADOS FICTÍCIOS</span><h1>Atividades<br>e inscritos.</h1><p class="sub">${e.title}</p><label class="field" style="margin-top:20px">Atividade<select data-roster>${activities.filter(a=>a.event===e.id).map(a=>`<option value="${a.id}" ${state.rosterActivity===a.id?'selected':''}>${a.title}</option>`).join('')}</select></label><div class="section-head"><h2>Inscritos · exemplo</h2><span class="meta" style="margin:0">${state.rosterActivity===3?'20':state.rosterActivity===2?'36':'18'} confirmados</span></div>${['Aluno Exemplo A','Aluno Exemplo B','Aluno Exemplo C'].map((n,i)=>`<div class="person"><span>${n}<span class="meta" style="margin:0">aluno${i+1}@exemplo.com</span></span><span class="badge">Confirmada</span></div>`).join('')}<p class="meta">Amostra ilustrativa da lista de participantes.</p>`;}
+    const views={home,program,activity:detail,login,register,mine,organizer,editor,roster};
+    function render(){root.querySelectorAll('[data-screen]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.screen===state.screen)));root.querySelectorAll('[data-product]').forEach(el=>{const desktop=el.dataset.product==='desktop';el.innerHTML=`${desktop?'<div class="browser-line"><span></span><span></span><span></span><small>Central de Eventos ICET · Protótipo</small></div>':''}<header class="app-header"><div class="brand"><span class="brand-mark" aria-hidden="true"><b></b><b></b><b></b><b></b></span><span class="brand-name">Central de Eventos<small>ICET / UFAM</small></span></div>${button(state.signed?'AL':icon('user-round'),state.signed?'mine':'login','account',`aria-label="${state.signed?'Minhas inscrições':'Entrar na conta'}"`)}</header><main class="app-content">${(views[state.screen]||home)()}<div class="feedback" role="status" aria-live="polite">${state.notice?`<div class="notice ${state.noticeType==='error'?'error':''}">${esc(state.notice)}</div>`:''}</div></main><nav class="app-nav" aria-label="Navegação principal">${[['home','compass','Eventos'],['mine','calendar-check','Inscrições'],['organizer','panels-top-left','Organizar']].map(([screen,ico,label])=>button(icon(ico)+label,screen,'',`aria-current="${state.screen===screen?'page':'false'}"`)).join('')}</nav><div class="demo-footer">PROTÓTIPO · DADOS ILUSTRATIVOS · SEM ENVIO</div>`;});if(globalThis.lucide)lucide.createIcons({attrs:{width:18,height:18}});}
+    root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;const form=b.closest('form');if(form&&b.type==='submit'){e.preventDefault();if(form.reportValidity())submitForm(form);return;}if(b.dataset.screen){state.editDraft=false;go(b.dataset.screen);return;}if(b.dataset.event){state.event=Number(b.dataset.event);state.day=activities.find(a=>a.event===state.event).day;go('program');return;}if(b.dataset.filter){state.filter=b.dataset.filter;render();persist();return;}if(b.dataset.day){state.day=b.dataset.day;render();persist();return;}const action=b.dataset.action;if(!action)return;if(action==='detail'){state.activity=Number(b.dataset.activity);state.event=currentActivity().event;go('activity');return;}if(action==='enroll'){if(!state.signed){state.afterLogin='activity';go('login');return;}const a=currentActivity();if(a.remaining>0&&!state.registrations.includes(a.id)&&!conflict(a)){state.registrations.push(a.id);state.notice='Inscrição simulada com sucesso. Sua atividade aparece em Minhas inscrições.';render();persist();}return;}if(action==='cancel'){state.cancelTarget=Number(b.dataset.registration);render();return;}if(action==='cancel-back'){state.cancelTarget=null;render();return;}if(action==='cancel-confirm'){state.requests.push(state.cancelTarget);state.cancelTarget=null;state.notice='Solicitação simulada enviada. O cancelamento ainda não foi efetivado.';render();persist();return;}if(action==='edit-draft'){state.editDraft=true;go('editor');return;}if(action==='editor')state.editDraft=false;if(action==='roster'){state.event=1;state.rosterActivity=1;go('roster');return;}go(action);});
+    root.addEventListener('input',e=>{if(e.target.matches('[data-search]')){state.query=e.target.value;const el=e.target;const product=el.closest('[data-product]');const caret=el.selectionStart;render();const replacement=product.querySelector('[data-search]');replacement.focus();try{replacement.setSelectionRange(caret,caret);}catch{}persist();}});
+    root.addEventListener('change',e=>{if(e.target.matches('[data-roster]')){state.rosterActivity=Number(e.target.value);render();persist();}});
+    function submitForm(form){state.noticeType='';if(form.dataset.form==='register'&&form.querySelectorAll('[type=password]')[0].value!==form.querySelectorAll('[type=password]')[1].value){state.notice='As senhas precisam ser iguais.';state.noticeType='error';const feedback=form.closest('main').querySelector('.feedback');feedback.innerHTML=`<div class="notice error" role="alert">${state.notice}</div>`;return;}if(form.dataset.form==='login'||form.dataset.form==='register'){state.signed=true;const next=state.afterLogin||'home';state.afterLogin=null;go(next);state.notice='Acesso simulado. Nenhuma credencial foi enviada ou armazenada.';render();return;}if(form.dataset.form==='editor'){const data=new FormData(form);if(data.get('end')<data.get('start')){const feedback=form.closest('main').querySelector('.feedback');feedback.innerHTML='<div class="notice error" role="alert">A data final deve ser igual ou posterior à data inicial.</div>';return;}state.notice=`Rascunho “${data.get('title')}” validado nesta demonstração. As atividades serão definidas na próxima etapa.`;render();}}
+    root.addEventListener('submit',e=>{if(e.target.dataset.form){e.preventDefault();submitForm(e.target);}});
+    root.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'&&e.target.closest('form')){e.preventDefault();const f=e.target.closest('form');if(f.reportValidity())submitForm(f);}});
+    render();
+    window.addEventListener('openai:set_globals',e=>{const s=e.detail?.globals?.widgetState?.privateContent?.icet;if(s&&screens.includes(s.screen)){state={...state,...s};render();}});
+    if(globalThis.Tweak){const design={radius:16};const t=new Tweak({container:root,onChange:()=>root.style.setProperty('--radius',design.radius+'px')});t.addSlider(design,'radius',{label:'Cantos dos cartões',min:6,max:24,step:2,unit:'px'});}
+  })();
+  </script>
+</div>
